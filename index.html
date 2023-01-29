@@ -4,84 +4,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>UNT-crypto news</title>
     
 </head>
 <body>
-    <div class="header">
-        <div class="logoImg1">
-            <img src="./glitchy-demo.regular.jpg">
-        </div>
-        <img src="./bg.png" id="headerIMG">
-        <div class="cryptoList">
-
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./btc.svg"></div>
-                <div class="nameCnt"> Bitcoin</div>
-            </div>
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./eth.svg"></div>
-                <div class="nameCnt">Ethereum</div>
-            </div>
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./atom.svg"></div>
-                <div class="nameCnt">Atom</div>
-            </div> 
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./ada.svg"></div>
-                <div class="nameCnt">Cardano</div>
-            </div> 
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./doge.svg"></div>
-                <div class="nameCnt">DogeCoin</div>
-            </div>
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./sol.svg"></div>
-                <div class="nameCnt">Solana</div>
-            </div>
-            <div class="cryptoEl">
-                <div class="imgCnt"><img src="./shib.svg"></div>
-                <div class="nameCnt">Shiba Inu</div>
-            </div>
-        </div>
+    
+    <div class="profileDiv" id="profileDiv">
+        <p id="CloseBtn">X</p>
+        <img src="./myProfilePic.jpg" id="profilePic">
+        <div id="infoSection"></div>
     </div>
+    <div class="header">
+        <img src="./bitcoin-1813503_1280.jpg" id="headerIMG">
+        <div id="btcSVG"><img src="./btc.svg"></div>
+        <div id="adaSVG"><img src="./ada.svg"></div>
+        <div id="dogeSVG"><img src="./doge.svg"></div>
+        <div id="ethSVG"><img src="./eth.svg"></div>
+        <div id="solSVG"><img src="./sol.svg"></div>
+        <div id="atmSVG"><img src="./atom.svg"></div>
+        <div id="shibSVG"><img src="./shib.svg"></div>
+        <div id="trxSVG"><img src="./trx.svg"></div>
+    </div>
+
+    <div class="alertClass" id="alertClass">
+        <p>Blerje e suksesshme!</p>
+        <b id ="closeAlert">X</b>
+    </div>
+
+    
     <div class="cryptoNews" id="cryptoNews">
-<br>
-        <img src="./text-1673733643030.png" id="cryproNewImg" style="border-bottom:5px solid crimson;border-left:5px solid crimson;border-right:5px solid crimson;padding:3px;">
-
+    <br>
+        <h2  id="cryproNewImg" style="border-bottom:5px solid orange;border-left:5px solid orange;border-right:5px solid orange;padding:3px;border-radius:20px;font-size:32px;color:white;text-shadow:2px 2px black;">Crypto News</h2>
         <h6 id="news1"></h6>
-
         <div class="crypto1" id ="crypto1">
         </div>
-
-        
     </div>
 
     <div class="cryptoNews" id ="cryptoNews">
+    <!-- <img src="./rapid.jpg" id="cryproNewImg" style="border-bottom:5px solid crimson;border-left:5px solid crimson;border-right:5px solid crimson;padding:3px;"> -->
+        <h2 id="CryptoCoinsHeader" style="color:white;text-shadow:2px 2px black;font-size:32px;border-bottom:5px solid orange;border-left:5px solid orange;border-right:5px solid orange;padding:5px;border-radius:20px;">Crypto Coins</h2>
         <h6 id="pricesh5"></h6> 
 
         <div class="cryptoNew" id="cryptoNew">
 
         </div>
 
-
-        <!-- <div class="example">
-            <div class="exampleImg">
-                <h5 id="h5Icon">Icon</h5>
-            </div>
-            <div class="exampleName">
-                <h5 id="h5Name">Name</h5>
-            </div>
-            <div class="examplePrice">
-                <h5 id="h5Price">Price</h5>
-            </div>
-        </div>  -->
          
         </div>
     </div>
 
-    <script src="./script.js">
+    <div style="height:200vh;">
         
-</script>
+    </div>
+
+    <script src="./script.js"></script>
+
+    <script>
+
+    var elements = $('.header div');
+    var lastShown = 0;
+
+    function fadeInRandomElement(param) {
+        // choose random element index to show
+        var randomIndex = Math.floor(Math.random()*elements.length);
+        // prevent showing same element 2 times in a row
+        while (lastShown == randomIndex) {
+            randomIndex = Math.floor(Math.random()*elements.length);
+        }
+        var randomElement = elements.eq(randomIndex);
+        // set random position > show > wait > hide > run this function once again
+        randomElement
+            .css({
+                top: Math.random()*100 + "%",
+                left: Math.random()*100 + "%"
+            })
+            .fadeIn(param)
+            .delay(param)
+            .fadeOut(2000, fadeInRandomElement);
+    }
+
+    fadeInRandomElement(500);
+    fadeInRandomElement(1000);
+    fadeInRandomElement(1500);
+    fadeInRandomElement(700);
+    fadeInRandomElement(1200);
+    fadeInRandomElement(600);
+    fadeInRandomElement(800);
+    </script>
 </body>
 </html>
