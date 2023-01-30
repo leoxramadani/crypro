@@ -190,12 +190,14 @@ function listPrices(prices1){
                     moneySpentTitle.style.textShadow="2px 2px black";
                     moneySpentTitle.style.fontSize="22px";
                     moneySpentTitle.style.textAlign="center";
+                    moneySpentTitle.style.padding="0px";
+                    moneySpentTitle.style.margin="0px";
 
                 let moneyGone = document.createElement("h5");
                     moneyGone.id="moneyGone";
-                    moneyGone.style.background="black";
+                    moneyGone.style.background="white";
                     moneyGone.style.padding="2px";
-                    moneyGone.style.color="green";
+                    moneyGone.style.color="orange";
                     moneyGone.style.fontSize="18px";
 
                     
@@ -212,19 +214,28 @@ function listPrices(prices1){
                 profilePic.addEventListener("click",function(){
                     
                     profileDiv.style.paddingBottom="20px";
-                    profileDiv.style.width="88vw";
+                    if(window.innerWidth >500){
+                        profileDiv.style.width="15vw";
+                        console.log("asd");
+                    }
+                    else{
+                        profileDiv.style.width="88vw";
+                        console.log("123");
+                    }
                     profileDiv.style.height="auto";
                     profileDiv.style.borderRadius="35px"
                     profileDiv.style.cursor = "default";
 
                     profilePic.style.marginTop="25px";
-                    profilePic.style.width="200px";
-                    profilePic.style.height="200px";
+                    profilePic.style.width="100px";
+                    profilePic.style.height="100px";
 
                     moneySpentTitle.style.dipslay="block";
+                    
                     infoSection.style.justifyContent="space-evenly";
                     infoSection.style.alignItems="center";
-                    infoSection.style.display="flex "
+                    infoSection.style.display="flex ";
+                    
 
                     CloseBtn.style.display="block";
 
