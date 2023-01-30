@@ -164,10 +164,6 @@ background-color: transparent;
 width: 200px;
 height: 300px;
 perspective: 1000px;
-border-top-left-radius: 100px;
-border-bottom-right-radius: 100px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
 display: inline-block;
 margin: 20px 50px;
 
@@ -204,10 +200,6 @@ width: 100%;
 height: 100%;
 text-align: center;
 transition: transform 0.8s;
-border-top-left-radius: 100px;
-border-bottom-right-radius: 100px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
 transform-style: preserve-3d;
 }
 
@@ -222,10 +214,6 @@ width: 100%;
 height: 100%;
 -webkit-backface-visibility: hidden;
 backface-visibility: hidden;
-border-top-left-radius: 100px;
-border-bottom-right-radius: 100px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
 }
 
 .flip-box-front {
@@ -236,10 +224,6 @@ color: black;
 display:flex;
 justify-content: center;
 align-items: center;
-border-top-left-radius: 100px;
-border-bottom-right-radius: 100px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
 overflow: hidden;
 
 }
@@ -249,10 +233,6 @@ background: rgb(22,34,46);
 background: linear-gradient(132deg, rgb(120, 151, 180) 0%, rgb(51, 76, 101) 35%, rgb(120, 151, 180) 70%);
 color: rgb(255, 255, 255);
 transform: rotateY(180deg);
-border-top-left-radius: 100px;
-border-bottom-right-radius: 100px;
-border-top-right-radius: 20px;
-border-bottom-left-radius: 20px;
 display:flex;
 justify-content: center;
 align-items: center;
@@ -275,8 +255,8 @@ color:White;
         align-items: center;
     }
     .flip-box {
-        width:230px;
-        height:130px;
+        width:300px;
+        height:160px;
     }
     .flip-box-front h5{
         font-size:10px;
@@ -293,18 +273,24 @@ color:White;
   }
 
   .example{
-    width:200px;
+    width:300px;
     height:auto;
 
-    border-radius: 75px;
-background: #16222E;
-box-shadow: inset -14px 14px 14px #090e12,
+    border-radius: 50%;
+    background: #16222E;
+    box-shadow: inset -14px 14px 14px #090e12,
             inset 14px -14px 14px #23364a;
     display:flex;
     align-items: center;
     flex-direction: column;
     padding-bottom:30px;
     margin:10px;
+    transition:1s;
+  }
+  .example:hover{
+    background: #23364a;
+    box-shadow: inset -14px 14px 14px #16222E,
+            inset 14px -14px 14px #090e12;
   }
   .example button {
     width:100px;
@@ -315,7 +301,16 @@ box-shadow: inset -14px 14px 14px #090e12,
     border-bottom:2px solid white;
     border-left:2px solid white;
     border-right:2px solid white;
+    border-top:none;
     cursor:pointer;
+    transition:.3s;
+}
+.example button:hover{
+    border-top:none;
+    color:greenyellow;
+    border-bottom:2px solid greenyellow;
+    border-left:2px solid greenyellow;
+    border-right:2px solid greenyellow;
 }
   .exampleImg{
     margin-top:20px;
@@ -394,7 +389,7 @@ box-shadow: inset -14px 14px 14px #090e12,
 
   #infoSection{
     width:50%;
-    height:200px;
+    height:auto;
     background-color: #23364a9c;
     display:none;
     border-radius:25px;
@@ -423,4 +418,60 @@ box-shadow: inset -14px 14px 14px #090e12,
     top:10px;
     right:10px;
     cursor: pointer;
+}
+.contact{
+    width:100vw;
+    height:auto;
+    background-color: #121b24;
+    margin-top:10vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact h4{
+    color:white;
+    font-size:22px;
+    
+    margin:0;
+    padding:0;
+}
+.contact h5{
+    color:white;
+    font-size:26px;
+    
+    margin:0;
+    padding:0;
+}
+.contact h3 {
+    color:white;
+    font-size:18px;
+    margin:0;
+    padding:0;
+}
+.contact h6 {
+    color:white;
+    font-size:18px;
+    
+    margin:0;
+    padding:0;
+}
+.upperPart{
+    width:100%;
+    height:auto;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin:0;
+    padding:20px 0;
+}
+.lowerPart{
+    width:100%;
+    height:auto;
+    display:flex;
+    justify-content:space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin:0;
+    padding:20px 0;
 }
