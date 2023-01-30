@@ -176,35 +176,12 @@ function listPrices(prices1){
                     infoSection.style.justifyContent="space-evenly";
                     infoSection.style.alignItems="center";
 
-                let myMoneySection = document.createElement("div");
-                    myMoneySection.id = "myMoneySection";
-                    myMoneySection.style.width="40%";
-                    myMoneySection.style.height="80%";
-                    myMoneySection.style.border="2px solid pink";
-                    myMoneySection.style.display="none";
-                    myMoneySection.style.justifyContent="space-evenly";
-                    myMoneySection.style.alignItems="center";
-                    myMoneySection.style.flexDirection="column";
                 
-                let myMoneyTitle = document.createElement("h5");
-                    myMoneyTitle.appendChild(document.createTextNode("My wallet"));
-                    myMoneyTitle.style.color="white";
-                    myMoneyTitle.style.textShadow="2px 2px black";
-                    myMoneyTitle.style.fontSize="22px";
-                    myMoneyTitle.style.textAlign="center";
-                    myMoneyTitle.style.display="none";
-
-                let myMoney = document.createElement("h5");
-                    myMoney.appendChild(document.createTextNode("$"));
-                    myMoney.style.color="green";
-                    myMoney.style.fontSize="18px";
-                    myMoney.style.display="none";
 
                 let myMoneySpent = document.createElement("div");
                     myMoneySpent.id = "myMoneySpent";
                     myMoneySpent.style.width="40%";
                     myMoneySpent.style.height="80%";
-                    myMoneySpent.style.border="2px solid crimson";
                     myMoneySpent.style.display="none";
 
                 let moneySpentTitle = document.createElement("h5");
@@ -213,7 +190,6 @@ function listPrices(prices1){
                     moneySpentTitle.style.textShadow="2px 2px black";
                     moneySpentTitle.style.fontSize="22px";
                     moneySpentTitle.style.textAlign="center";
-                    moneySpentTitle.style.display="none";
 
                 let moneyGone = document.createElement("h5");
                     moneyGone.id="moneyGone";
@@ -225,15 +201,11 @@ function listPrices(prices1){
                     
                     myMoneySpent.appendChild(moneySpentTitle);
                     myMoneySpent.appendChild(moneyGone);
-                    myMoneySection.appendChild(myMoneyTitle);
-                    myMoneySection.appendChild(myMoney)
-
 
 
                 let y = 0;
                 if(y<1 ){
 
-                    // infoSection.appendChild(myMoneySection)
                     infoSection.appendChild(myMoneySpent);
                 }
                 y++;
@@ -249,23 +221,13 @@ function listPrices(prices1){
                     profilePic.style.width="200px";
                     profilePic.style.height="200px";
 
-
+                    moneySpentTitle.style.dipslay="block";
                     infoSection.style.justifyContent="space-evenly";
                     infoSection.style.alignItems="center";
                     infoSection.style.display="flex "
 
-                    myMoneySection.style.display="flex";
-                    myMoneySection.style.justifyContent="space-evenly";
-                    myMoneySection.style.alignItems="center";
-                    myMoneySection.style.flexDirection="column";
-
                     CloseBtn.style.display="block";
 
-                    myMoney.style.display="block";
-                    myMoney.style.display="block";
-                    myMoneyTitle.style.display="block";
-                    moneySpentTitle.style.display="block";
-                   
 
                     myMoneySpent.style.display="flex";
                     myMoneySpent.style.justifyContent="space-evenly";
