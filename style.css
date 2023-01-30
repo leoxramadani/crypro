@@ -388,7 +388,7 @@ color:White;
   }
 
   #infoSection{
-    width:50%;
+    width:auto;
     height:auto;
     background-color: #23364a9c;
     display:none;
